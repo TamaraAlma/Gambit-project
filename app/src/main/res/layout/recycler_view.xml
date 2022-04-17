@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:leftEdgeSwipeOffset="0dp"
+    app:rightEdgeSwipeOffset="0dp"
+    >
+    <RelativeLayout
+        android:id="@+id/conteiner_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/fav_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/ic_unlovable"/>
+            </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="180dp"
+        android:layout_height="150dp"
+        android:src="@drawable/_avatar180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Паста Лючия "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image"
+
+        app:layout_constraintTop_toTopOf="@+id/image" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shadow"
+        android:paddingHorizontal="12dp"
+
+        android:paddingVertical="8dp"
+        android:text="450p"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintStart_toEndOf="@+id/image" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/basket_button"
+        android:layout_width="112dp"
+        android:layout_height="32dp"
+        android:background="@drawable/basket"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="В корзину"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/price"
+        app:layout_constraintTop_toTopOf="@id/price"
+        android:layout_marginStart="16dp"
+        android:visibility="visible"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/basket"
+            android:padding="3dp"
+            android:text="-"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/price"
+            app:layout_constraintEnd_toStartOf="@id/count"
+            app:layout_constraintStart_toEndOf="@id/price" />
+    <androidx.constraintlayout.helper.widget.Flow
+    android:id="@+id/flow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:constraint_referenced_ids="minus,count,plus"
+    app:layout_constraintStart_toEndOf="@id/price"
+    app:layout_constraintTop_toTopOf="@id/price"
+    android:layout_marginStart="16dp"
+    app:flow_wrapMode="chain"
+    app:flow_horizontalGap="8dp"
+    android:visibility="gone"
+    />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/minus"
+        app:layout_constraintEnd_toStartOf="@id/plus"
+
+        app:layout_constraintStart_toEndOf="@id/minus" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/basket"
+            android:padding="3dp"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/count" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.daimajia.swipe.SwipeLayout>
